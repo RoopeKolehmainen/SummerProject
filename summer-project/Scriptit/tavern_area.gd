@@ -13,4 +13,4 @@ func _input(event):
 
 func scenevaihto():
 	if Input.is_action_pressed("interact") and has_overlapping_bodies():
-		get_tree().change_scene_to_file("res://TESTISCENE.tscn")
+		get_tree().change_scene_to_file("res://Scenet/TESTISCENE.tscn")

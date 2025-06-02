@@ -17,11 +17,7 @@ config/icon="res://Assetit/icon.svg"
 
 [autoload]
 
-SceneManager="res://Scriptit/scene_manager.gd"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/sprite_painter/plugin.cfg")
+SceneManager="*res://Scriptit/scene_manager.gd"
 
 [input]
 

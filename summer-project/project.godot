@@ -17,7 +17,7 @@ config/icon="res://Assetit/icon.svg"
 
 [autoload]
 
-SceneManager="*res://Scriptit/scene_manager.gd"
+MainGlobal="*res://Scriptit/Global.gd"
 
 [input]
 

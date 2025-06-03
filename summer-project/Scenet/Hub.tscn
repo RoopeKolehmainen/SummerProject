@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2q16vod8bj6u"]
 
-[ext_resource type="PackedScene" uid="uid://dlep0edrfgde1" path="res://Portal.tscn" id="1_wrjpj"]
+[ext_resource type="PackedScene" uid="uid://dlep0edrfgde1" path="res://Scenet/Portal.tscn" id="1_wrjpj"]
 [ext_resource type="Texture2D" uid="uid://v2fjnjaqac2t" path="res://Assetit/icon2.png" id="2_fvavt"]
 [ext_resource type="Texture2D" uid="uid://dcyc2h8pwnrh" path="res://Assetit/icon3.png" id="3_msp50"]
 [ext_resource type="PackedScene" uid="uid://b04y8g6jsk7v3" path="res://Scenet/Player.tscn" id="4_msp50"]
@@ -12,6 +12,7 @@ position = Vector2(-168, -183)
 texture = ExtResource("2_fvavt")
 
 [node name="Door_T" parent="Taverna" instance=ExtResource("1_wrjpj")]
+SceneName = "TESTISCENE"
 
 [node name="Blacksmith" type="Sprite2D" parent="."]
 position = Vector2(146, -62)

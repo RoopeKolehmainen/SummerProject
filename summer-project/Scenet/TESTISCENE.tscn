@@ -87,7 +87,6 @@ position = Vector2(-2, 62)
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_07b12")
 SceneName = "Hub"
-is_door_exit = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 259)

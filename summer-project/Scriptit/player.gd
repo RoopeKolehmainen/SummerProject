@@ -1,4 +1,6 @@
-class_name player extends CharacterBody2D
+extends CharacterBody2D
+
+class_name Player
 
 @export var speed = 600
 
@@ -13,7 +15,3 @@ func _physics_process(delta: float):
 func player_movement(delta):
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
-
-
-func playerstartpos(startposition:Transform2D):
-	transform = startposition

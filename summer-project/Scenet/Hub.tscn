@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dcyc2h8pwnrh" path="res://Assetit/icon3.png" id="3_msp50"]
 [ext_resource type="PackedScene" uid="uid://b04y8g6jsk7v3" path="res://Scenet/Player.tscn" id="4_msp50"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Main_hub_area" type="Node2D"]
 script = ExtResource("1_2kky8")
 
 [node name="Taverna" type="Sprite2D" parent="."]
@@ -22,6 +22,7 @@ position = Vector2(146, -62)
 texture = ExtResource("3_msp50")
 
 [node name="Door_B" parent="Blacksmith" instance=ExtResource("1_wrjpj")]
+target_scene = "uid://ch1hchuqmlfyh"
 
 [node name="Player" parent="." instance=ExtResource("4_msp50")]
 position = Vector2(-81, 97)

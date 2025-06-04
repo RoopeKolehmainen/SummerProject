@@ -11,6 +11,6 @@ func _physics_process(delta: float):
 
 	
 	
-func player_movement(delta):
+func player_movement(_delta):
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed

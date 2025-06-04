@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://ch1hchuqmlfyh"]
+[gd_scene load_steps=4 format=3 uid="uid://ch1hchuqmlfyh"]
 
+[ext_resource type="Script" uid="uid://dt8e18owvncvo" path="res://Scriptit/DoorCheck.gd" id="1_0fmk2"]
 [ext_resource type="PackedScene" uid="uid://b04y8g6jsk7v3" path="res://Scenet/Player.tscn" id="1_bbcpu"]
+[ext_resource type="PackedScene" uid="uid://dlep0edrfgde1" path="res://Scenet/Portal.tscn" id="2_wngu0"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Blacksmith_area" type="Node2D"]
+script = ExtResource("1_0fmk2")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_bbcpu")]
+[node name="Door_B" parent="." instance=ExtResource("2_wngu0")]
+position = Vector2(0, 152)
+target_scene = "uid://b2q16vod8bj6u"
+
+[node name="Player" parent="." instance=ExtResource("1_bbcpu")]

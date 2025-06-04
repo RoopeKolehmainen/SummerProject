@@ -2,19 +2,20 @@ extends Area2D
 
 class_name Portal
 
-@export var SceneName:String
-
-
-func ready():
-	pass
+@export_file("*.tscn") var target_scene
 	
 	
 func _input(event):
 	if event.is_action_pressed("interact"):
-		scenevaihto()
+		if !target_scene:
+			print("no scene here")
+			return
+		if get_overlapping_bodies().size() > 0:
+			scenevaihto()
 
 func scenevaihto():
-	if Input.is_action_just_pressed("interact") and has_overlapping_bodies():
-		MainGlobal.change_scene(SceneName)
-
-	
+	var ERR = get_tree().change_scene_to_file(target_scene)
+	if ERR != OK:
+		print("somethign went wrong")
+	Global.door_name = name
+		

@@ -17,7 +17,7 @@ config/icon="res://Assetit/icon.svg"
 
 [autoload]
 
-MainGlobal="*res://Scriptit/Global.gd"
+Global="*res://Scriptit/Global.gd"
 
 [input]
 

@@ -22,7 +22,8 @@ position = Vector2(146, -62)
 texture = ExtResource("3_msp50")
 
 [node name="Door_B" parent="Blacksmith" instance=ExtResource("1_wrjpj")]
+position = Vector2(0, 5)
 target_scene = "uid://ch1hchuqmlfyh"
 
 [node name="Player" parent="." instance=ExtResource("4_msp50")]
-position = Vector2(-81, 97)
+position = Vector2(-100, -54)

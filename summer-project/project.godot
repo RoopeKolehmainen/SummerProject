@@ -19,6 +19,14 @@ config/icon="res://Assetit/icon.svg"
 
 Global="*res://Scriptit/Global.gd"
 
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="viewport"
+
 [input]
 
 up={
@@ -51,3 +59,7 @@ interact={
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Door"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

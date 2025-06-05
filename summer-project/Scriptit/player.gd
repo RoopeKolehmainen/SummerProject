@@ -12,7 +12,7 @@ var initial_position = Vector2(0,0)
 var player_direction = Vector2(0,0)
 var is_moving = false
 var percent_to_next_tile = 0.0
-
+var button_press = 0
 
 
 
@@ -21,7 +21,6 @@ func _physics_process(delta):
 	if is_moving == false:
 		process_player_input()
 		print(is_moving)
-	
 	elif  player_direction != Vector2.ZERO:
 		move(delta)
 		#Walk code

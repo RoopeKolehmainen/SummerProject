@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://pa0dgujjc2ml"]
+
+[ext_resource type="Texture2D" uid="uid://b1kviairde8a1" path="res://Assetit/Male_Spritesheet.png" id="1_sev5b"]
+[ext_resource type="Script" uid="uid://b6h7puhg6ega7" path="res://Scriptit/player.gd" id="2_n63hs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n63hs"]
+size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_aoh2q"]
+resource_name = "Walk_down"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ott5b"]
+_data = {
+&"Walk_down": SubResource("Animation_aoh2q")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sev5b")
+centered = false
+offset = Vector2(0, -4)
+hframes = 3
+vframes = 3
+script = ExtResource("2_n63hs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_n63hs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ott5b")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../AnimationPlayer")

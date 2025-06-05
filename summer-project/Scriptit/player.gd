@@ -8,41 +8,34 @@ class_name Player
 @export var speed = 4.0
 @export var TILE_SIZE = 16
 
+enum PlayerState { IDLE, TURNING, WALKING }
+enum FacingDirection { LEFT, RIGHT, UP, DOWN }
+
+var player_state = PlayerState.IDLE
+var facing_direction = FacingDirection.DOWN
+
 var initial_position = Vector2(0,0)
 var player_direction = Vector2(0,0)
 var is_moving = false
 var percent_to_next_tile = 0.0
-var button_press = 0
+@onready var anim_tree = $AnimationTree
+@onready var anim_state = anim_tree.get("parameters/playback")
 
 
-
+func _ready():
+	anim_tree.active = true
 
 func _physics_process(delta):
-	if is_moving == false:
+	if player_state == PlayerState.TURNING:
+		return
+	elif is_moving == false:
 		process_player_input()
 		print(is_moving)
 	elif  player_direction != Vector2.ZERO:
 		move(delta)
-		#Walk code
-		if Input.is_action_pressed("left") and player_direction.y == 0:
-			$AnimatedSprite2D.play("walk_sides")
-			$AnimatedSprite2D.flip_h = false
-		elif Input.is_action_pressed("right") and player_direction.y == 0:
-			$AnimatedSprite2D.flip_h = true
-			$AnimatedSprite2D.play("walk_sides")
-		elif Input.is_action_pressed("up") and player_direction.x == 0:
-			$AnimatedSprite2D.play("walk_up")
-		elif Input.is_action_pressed("down") and player_direction.x == 0:
-			$AnimatedSprite2D.play("walk_down")
-		elif Input.is_action_just_released("left"):
-			$AnimatedSprite2D.set_frame_and_progress(4,0.99)
-		elif Input.is_action_just_released("right"):
-			$AnimatedSprite2D.set_frame_and_progress(4,0.99)
-		elif Input.is_action_just_released("up"):
-			$AnimatedSprite2D.set_frame_and_progress(4,0.99)
-		elif Input.is_action_just_released("down"):
-			$AnimatedSprite2D.set_frame_and_progress(4,0.99)
+		anim_state.travel("Walk")
 	else:
+		anim_state.travel("Idle")
 		is_moving = false
 		
 
@@ -60,9 +53,18 @@ func process_player_input():
 
 
 	if player_direction != Vector2.ZERO:
+		anim_tree.set("parameters/Idle/blend_position", player_direction)
+		anim_tree.set("parameters/Walk/blend_position",player_direction)
+		anim_tree.set("parameters/Turn/blend_position",player_direction)
 		
-		initial_position = position
-		is_moving = true
+		if need_to_turn():
+			player_state = PlayerState.TURNING
+			anim_state.travel("Turn")
+		else:
+			initial_position = position
+			is_moving = true
+	else:
+		anim_state.travel("Idle")
 
 
 
@@ -75,8 +77,24 @@ func move(delta):
 	else:
 		position = initial_position + (TILE_SIZE * player_direction * percent_to_next_tile)
 
-func player_animations():
-
-	pass
+func need_to_turn():
+	var new_facing_direction = facing_direction
+	if player_direction.x < 0:
+		new_facing_direction = FacingDirection.LEFT
+	elif player_direction.x > 0:
+		new_facing_direction = FacingDirection.RIGHT
+	elif player_direction.y < 0:
+		new_facing_direction = FacingDirection.UP
+	elif player_direction.y > 0:
+		new_facing_direction = FacingDirection.DOWN
 	
+	if facing_direction != new_facing_direction:
+		facing_direction = new_facing_direction
+		return true
+	
+	return false
+	
+	
+func finished_turning():
+	player_state = PlayerState.IDLE
 	

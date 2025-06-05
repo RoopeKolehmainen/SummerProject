@@ -20,24 +20,34 @@ var percent_to_next_tile = 0.0
 func _physics_process(delta):
 	if is_moving == false:
 		process_player_input()
+		print(is_moving)
+	
 	elif  player_direction != Vector2.ZERO:
 		move(delta)
 		#Walk code
-		if Input.is_action_pressed("left"):
+		if Input.is_action_pressed("left") and player_direction.y == 0:
 			$AnimatedSprite2D.play("walk_sides")
 			$AnimatedSprite2D.flip_h = false
-		elif Input.is_action_pressed("right"):
+		elif Input.is_action_pressed("right") and player_direction.y == 0:
 			$AnimatedSprite2D.flip_h = true
 			$AnimatedSprite2D.play("walk_sides")
-		elif Input.is_action_pressed("up"):
+		elif Input.is_action_pressed("up") and player_direction.x == 0:
 			$AnimatedSprite2D.play("walk_up")
-		elif Input.is_action_pressed("down"):
+		elif Input.is_action_pressed("down") and player_direction.x == 0:
 			$AnimatedSprite2D.play("walk_down")
 		elif Input.is_action_just_released("left"):
-			
+			$AnimatedSprite2D.set_frame_and_progress(4,0.99)
+		elif Input.is_action_just_released("right"):
+			$AnimatedSprite2D.set_frame_and_progress(4,0.99)
+		elif Input.is_action_just_released("up"):
+			$AnimatedSprite2D.set_frame_and_progress(4,0.99)
+		elif Input.is_action_just_released("down"):
 			$AnimatedSprite2D.set_frame_and_progress(4,0.99)
 	else:
 		is_moving = false
+		
+
+			
 		
 
 func process_player_input():

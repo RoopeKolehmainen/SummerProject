@@ -42,10 +42,10 @@ func _physics_process(delta):
 
 func process_player_input():
 	if player_direction.y == 0:
-		player_direction.x = int(Input.get_action_strength("right")) - int(Input.get_action_strength("left"))
+		player_direction.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
 
 	if player_direction.x == 0:
-		player_direction.y = int(Input.get_action_strength("down")) - int(Input.get_action_strength("up"))
+		player_direction.y = int(Input.is_action_pressed("down")) - int(Input.is_action_pressed("up"))
 
 	if player_direction != Vector2.ZERO:
 		anim_tree.set("parameters/Idle/blend_position", player_direction)

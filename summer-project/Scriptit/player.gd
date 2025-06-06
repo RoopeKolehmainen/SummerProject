@@ -5,7 +5,7 @@ class_name Player
 
 
 @export_category("Player Settings")
-@export var speed = 4.0
+@export var speed = 4
 @export var TILE_SIZE = 16
 
 enum PlayerState { IDLE, TURNING, WALKING }
@@ -71,8 +71,6 @@ func move(delta):
 		percent_to_next_tile = 0.0
 		is_moving = false
 
-
-
 	else:
 		position = initial_position + (TILE_SIZE * player_direction * percent_to_next_tile)
 
@@ -99,3 +97,6 @@ func need_to_turn():
 
 func finished_turning():
 	player_state = PlayerState.IDLE
+	
+func player_sprint():
+	pass

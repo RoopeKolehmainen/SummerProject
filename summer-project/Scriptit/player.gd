@@ -67,9 +67,11 @@ func move(delta):
 	percent_to_next_tile += speed * delta
 
 	if percent_to_next_tile >= 0.99:
-		position = initial_position + (TILE_SIZE*player_direction)
+		position = initial_position + (TILE_SIZE*player_direction)	
 		percent_to_next_tile = 0.0
 		is_moving = false
+
+
 
 	else:
 		position = initial_position + (TILE_SIZE * player_direction * percent_to_next_tile)

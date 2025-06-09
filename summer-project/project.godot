@@ -23,8 +23,8 @@ Global="*res://Scriptit/Global.gd"
 
 window/size/viewport_width=320
 window/size/viewport_height=180
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/window_width_override=2560
+window/size/window_height_override=1440
 window/stretch/mode="viewport"
 
 [input]
@@ -68,3 +68,4 @@ sprint={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true

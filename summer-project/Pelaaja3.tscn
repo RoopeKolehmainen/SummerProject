@@ -604,3 +604,10 @@ parameters/Walk/blend_position = Vector2(0, 0)
 libraries = {
 &"": SubResource("AnimationLibrary_ott5b")
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(8, 8)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(8, 8)
+target_position = Vector2(0, 16)

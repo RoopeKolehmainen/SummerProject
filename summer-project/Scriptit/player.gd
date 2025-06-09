@@ -5,7 +5,7 @@ class_name Player
 
 
 @export_category("Player Settings")
-@export var speed = 4
+@export var speed = 10
 @export var TILE_SIZE = 16
 
 enum PlayerState { IDLE, TURNING, WALKING }
@@ -23,18 +23,20 @@ var percent_to_next_tile = 0.0
 
 
 func _ready():
+	initial_position = position
 	anim_tree.active = true
 
 func _physics_process(delta):
-	if player_state == PlayerState.TURNING:
-		return
+	#if player_state == PlayerState.TURNING:
+		#pass
 
-	elif is_moving == false:
+	if is_moving == false:
 		process_player_input()
 
 	elif  player_direction != Vector2.ZERO:
 		move(delta)
 		anim_state.travel("Walk")
+	
 
 	else:
 		anim_state.travel("Idle")
@@ -66,8 +68,8 @@ func process_player_input():
 func move(delta):
 	percent_to_next_tile += speed * delta
 
-	if percent_to_next_tile >= 0.99:
-		position = initial_position + (TILE_SIZE*player_direction)	
+	if percent_to_next_tile >= 1.0:
+		position = initial_position + (TILE_SIZE*player_direction)
 		percent_to_next_tile = 0.0
 		is_moving = false
 

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv2iqjlb6joew"]
+
+[ext_resource type="Script" uid="uid://bpmtqbyx5f35s" path="res://character_body_2d.gd" id="1_r2shv"]
+[ext_resource type="Texture2D" uid="uid://b1kviairde8a1" path="res://Assetit/Male_Spritesheet.png" id="2_nl8v2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y80ap"]
+size = Vector2(16, 16)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_r2shv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("2_nl8v2")
+centered = false
+hframes = 3
+vframes = 3
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_y80ap")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://bv2iqjlb6joew"]
+[gd_scene load_steps=43 format=3 uid="uid://xqb4yd3oarpp"]
 
-[ext_resource type="Script" uid="uid://bpmtqbyx5f35s" path="res://character_body_2d.gd" id="1_r2shv"]
-[ext_resource type="Texture2D" uid="uid://b1kviairde8a1" path="res://Assetit/Male_Spritesheet.png" id="2_nl8v2"]
+[ext_resource type="Script" uid="uid://c7r1q18c3llum" path="res://pelaaja_4.gd" id="1_baygw"]
+[ext_resource type="Texture2D" uid="uid://b1kviairde8a1" path="res://Assetit/Male_Spritesheet.png" id="2_37kw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y80ap"]
 size = Vector2(16, 16)
@@ -577,11 +577,11 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_r2shv")
+script = ExtResource("1_baygw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
-texture = ExtResource("2_nl8v2")
+texture = ExtResource("2_37kw5")
 centered = false
 flip_h = true
 hframes = 3
@@ -610,4 +610,4 @@ position = Vector2(8, 8)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(8, 8)
-target_position = Vector2(0, 8)
+target_position = Vector2(0, 16)

@@ -1,7 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://bv2iqjlb6joew"]
+[gd_scene load_steps=43 format=3 uid="uid://d0j5ywjifhjbq"]
 
-[ext_resource type="Script" uid="uid://bpmtqbyx5f35s" path="res://character_body_2d.gd" id="1_r2shv"]
-[ext_resource type="Texture2D" uid="uid://b1kviairde8a1" path="res://Assetit/Male_Spritesheet.png" id="2_nl8v2"]
+[ext_resource type="Script" uid="uid://tcjr4r05tsei" path="res://pelaaja_5.gd" id="1_fff7w"]
+[ext_resource type="Texture2D" uid="uid://b1kviairde8a1" path="res://Assetit/Male_Spritesheet.png" id="2_5a13w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y80ap"]
 size = Vector2(16, 16)
@@ -577,11 +577,11 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_r2shv")
+script = ExtResource("1_fff7w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
-texture = ExtResource("2_nl8v2")
+texture = ExtResource("2_5a13w")
 centered = false
 flip_h = true
 hframes = 3
@@ -604,9 +604,6 @@ parameters/Walk/blend_position = Vector2(0, 0)
 libraries = {
 &"": SubResource("AnimationLibrary_ott5b")
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(8, 8)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(8, 8)

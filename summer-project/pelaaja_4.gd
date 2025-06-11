@@ -29,7 +29,7 @@ func _ready():
 	anim_tree.set("parameters/Idle/blend_position", Vector2.DOWN)
 
 func _process(delta):
-	movement_inputs()
+	movement_input2()
 	
 func _physics_process(delta):
 	#calls all functions in the project
@@ -158,3 +158,13 @@ func movement_inputs():
 		direction_keys.erase("up")
 	if !Input.is_action_pressed("right") and !Input.is_action_pressed("left") and !Input.is_action_pressed("down") and !Input.is_action_pressed("up"):
 		direction_keys.clear()
+
+func movement_input2():
+	var directions = ["right", "left", "down", "up"]
+	for dir in directions:
+		if Input.is_action_just_pressed(dir):
+			direction_keys.push_back(dir)
+		elif Input.is_action_just_released(dir):
+			direction_keys.erase(dir)
+		if direction_keys.size() == 0:
+			direction_keys.clear()

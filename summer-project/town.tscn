@@ -194,3 +194,5 @@ tile_map_data = PackedByteArray("AAD7//z/JgABAAAAAAD8//z/JgABAAAAAAD9//z/JgABAAA
 tile_set = SubResource("TileSet_nki3b")
 
 [node name="Player" parent="." instance=ExtResource("3_gwqsq")]
+speed = 6
+sprint_speed = 12

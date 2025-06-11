@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Summer project"
-run/main_scene="uid://b2q16vod8bj6u"
+run/main_scene="uid://cfuuegn8ydfse"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Assetit/icon.svg"
 

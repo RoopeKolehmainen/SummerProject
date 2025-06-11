@@ -125,3 +125,24 @@ func direction_stregnth():
 			direction_keys.erase(dir)
 		if direction_keys.size() == 0:
 			direction_keys.clear()
+
+func movement_inputs():
+		# Store direction keys in a "stack", ordered by when they're pressed
+	if Input.is_action_just_pressed("ui_right"):
+		direction_keys.push_back("ui_right")
+	elif Input.is_action_just_released("ui_right"):
+		direction_keys.erase("ui_right")
+	if Input.is_action_just_pressed("ui_left"):
+		direction_keys.push_back("ui_left")
+	elif Input.is_action_just_released("ui_left"):
+		direction_keys.erase("ui_left")
+	if Input.is_action_just_pressed("ui_down"):
+		direction_keys.push_back("ui_down")
+	elif Input.is_action_just_released("ui_down"):
+		direction_keys.erase("ui_down")
+	if Input.is_action_just_pressed("ui_up"):
+		direction_keys.push_back("ui_up")
+	elif Input.is_action_just_released("ui_up"):
+		direction_keys.erase("ui_up")
+	if !Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_left") and !Input.is_action_pressed("ui_down") and !Input.is_action_pressed("ui_up"):
+		direction_keys.clear()

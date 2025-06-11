@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://ds0yd6nton8ik" path="res://town.tres" id="1_dwdjc"]
 [ext_resource type="Texture2D" uid="uid://rfrgsg6d8wsd" path="res://Water.png" id="3_e8yg3"]
-[ext_resource type="PackedScene" uid="uid://d0j5ywjifhjbq" path="res://Pelaaja5.tscn" id="3_gwqsq"]
+[ext_resource type="PackedScene" uid="uid://xqb4yd3oarpp" path="res://Pelaaja4.tscn" id="3_gwqsq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e8yg3"]
 texture = ExtResource("3_e8yg3")

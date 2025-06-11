@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export_category("Settings")
 var TILE_SIZE = 16
-@export var speed = 4
+@export var speed = 8
 @export var sprint_speed = 10
 
 enum State{WALK, RUN, IDLE}
@@ -32,6 +32,7 @@ func _process(delta):
 	movement_input2()
 	
 func _physics_process(delta):
+	#print_debug(Engine.get_frames_per_second())
 	#calls all functions in the project
 	#movement_inputs()
 	match player_state:
@@ -54,7 +55,7 @@ func walk(delta):
 	ray.force_raycast_update()
 	if !ray.is_colliding():
 		percent_to_next_tile += speed*delta
-		if percent_to_next_tile >= 1.0:
+		if percent_to_next_tile >= 0.99:
 			position = initial_position + (TILE_SIZE*player_direction)
 			percent_to_next_tile = 0.0
 			is_moving = false

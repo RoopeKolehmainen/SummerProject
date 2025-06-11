@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @export_category("Settings")
 var TILE_SIZE = 16
-@export var speed = 4
-@export var sprint_speed = 10
+@export var speed = 64        # pixels per second walking speed
+@export var sprint_speed = 160  # pixels per second sprinting speed
 
 enum State {WALK, RUN, IDLE}
 enum Direction {UP, LEFT, RIGHT, DOWN}
@@ -11,13 +11,12 @@ enum Direction {UP, LEFT, RIGHT, DOWN}
 var player_state = State.IDLE
 var facing_direction = Direction.DOWN
 
-var initial_position = Vector2()
+var initial_position = Vector2.ZERO
 var player_direction = Vector2.ZERO
 var is_moving = false
 
 var percent_to_next_tile = 0.0
-var input_buffer = []
-var input_buffer_readout = Vector2.ZERO
+var direction_keys : Array = []
 
 @onready var anim_tree = $AnimationTree
 @onready var anim_state = anim_tree.get("parameters/playback")
@@ -28,52 +27,52 @@ func _ready():
 	anim_tree.set("parameters/Idle/blend_position", Vector2.DOWN)
 
 func _physics_process(delta):
+	update_direction_keys()
+	if not is_moving:
+		process_player_input()
 	match player_state:
 		State.WALK:
-			walk(delta)
+			move_player(delta, speed)
 		State.RUN:
-			run(delta)
+			move_player(delta, sprint_speed)
 		State.IDLE:
 			idle()
-	
-	if is_moving == false:
-		process_player_input()
-	
-	# You can adjust speed here if needed
-	speed = 8
 	player_animations()
-	print(is_moving)
 
-func walk(delta):
-	var desired_step: Vector2 = player_direction * TILE_SIZE / 2
+func move_player(delta, current_speed):
+	var move_distance = current_speed * delta
+	var total_distance = TILE_SIZE
+	var desired_step = player_direction * TILE_SIZE
 	ray.target_position = desired_step
 	ray.force_raycast_update()
+	
 	if not ray.is_colliding():
-		percent_to_next_tile += speed * delta
+		percent_to_next_tile += move_distance / total_distance
 		if percent_to_next_tile >= 1.0:
-			position = initial_position + (TILE_SIZE * player_direction)
+			position = initial_position + desired_step
 			percent_to_next_tile = 0.0
 			is_moving = false
 		else:
-			position = initial_position + (TILE_SIZE * player_direction * percent_to_next_tile)
+			position = initial_position + desired_step * percent_to_next_tile
 	else:
 		is_moving = false
 		percent_to_next_tile = 0.0
 
-func run(delta):
-	var desired_step: Vector2 = player_direction * TILE_SIZE / 2
-	ray.target_position = desired_step
-	ray.force_raycast_update()
-	if not ray.is_colliding():
-		percent_to_next_tile += sprint_speed * delta
-		if percent_to_next_tile >= 1.0:
-			position = initial_position + (TILE_SIZE * player_direction)
+func process_player_input():
+	if player_direction != Vector2.ZERO:
+		if not is_moving:
+			initial_position = position
 			percent_to_next_tile = 0.0
-			is_moving = false
-			player_state = State.IDLE
+			is_moving = true
+			anim_tree.set("parameters/Idle/blend_position", player_direction)
+			anim_tree.set("parameters/Walk/blend_position", player_direction)
+			anim_tree.set("parameters/Run/blend_position", player_direction)
+		if Input.is_action_pressed("sprint"):
+			player_state = State.RUN
 		else:
-			position = initial_position + (TILE_SIZE * player_direction * percent_to_next_tile)
+			player_state = State.WALK
 	else:
+		player_state = State.IDLE
 		is_moving = false
 		percent_to_next_tile = 0.0
 
@@ -90,53 +89,25 @@ func player_animations():
 		State.IDLE:
 			anim_state.travel("Idle")
 
-func process_player_input():
-	# Clear previous buffer if no new input
-	# Buffer only stores recent key presses
-	# Check for new key presses
-	if Input.is_action_just_pressed("right"):
-		input_buffer.append(Vector2.RIGHT)
-	elif Input.is_action_just_pressed("left"):
-		input_buffer.append(Vector2.LEFT)
-	elif Input.is_action_just_pressed("up"):
-		input_buffer.append(Vector2.UP)
-	elif Input.is_action_just_pressed("down"):
-		input_buffer.append(Vector2.DOWN)
+func update_direction_keys():
+	var directions = {
+		"right": Vector2.RIGHT,
+		"left": Vector2.LEFT,
+		"up": Vector2.UP,
+		"down": Vector2.DOWN
+	}
 
-	# Remove keys when released
-	if Input.is_action_just_released("right"):
-		input_buffer.erase(Vector2.RIGHT)
-	elif Input.is_action_just_released("left"):
-		input_buffer.erase(Vector2.LEFT)
-	elif Input.is_action_just_released("up"):
-		input_buffer.erase(Vector2.UP)
-	elif Input.is_action_just_released("down"):
-		input_buffer.erase(Vector2.DOWN)
+	for dir in directions.keys():
+		if Input.is_action_just_pressed(dir):
+			direction_keys.erase(dir)
+			direction_keys.push_back(dir)
 
-	# Determine the last input from buffer
-	if input_buffer.size() > 0:
-		input_buffer_readout = input_buffer[-1]
+	for dir in direction_keys.duplicate():
+		if not Input.is_action_pressed(dir):
+			direction_keys.erase(dir)
+
+	if direction_keys.size() > 0:
+		var last_dir = direction_keys[direction_keys.size() - 1]
+		player_direction = directions[last_dir]
 	else:
-		input_buffer_readout = Vector2.ZERO
-
-	# If there's buffered input, set player_direction accordingly
-	if input_buffer_readout != Vector2.ZERO:
-		# Only change direction if not currently moving
-		if not is_moving:
-			player_direction = input_buffer_readout
-			initial_position = position
-			is_moving = true
-			# Set animations parameters based on direction
-			anim_tree.set("parameters/Idle/blend_position", player_direction)
-			anim_tree.set("parameters/Walk/blend_position", player_direction)
-			anim_tree.set("parameters/Run/blend_position", player_direction)
-	else:
-		# No input, set to idle if not moving
-		if not is_moving:
-			player_state = State.IDLE
-
-	# Handle sprint input
-	if Input.is_action_pressed("sprint") and player_direction != Vector2.ZERO:
-		player_state = State.RUN
-	else:
-		player_state = State.WALK
+		player_direction = Vector2.ZERO

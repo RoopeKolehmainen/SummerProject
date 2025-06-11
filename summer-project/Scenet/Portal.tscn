@@ -3,10 +3,13 @@
 [ext_resource type="Script" uid="uid://boh3dvqv300cw" path="res://Scriptit/DoorPortal.gd" id="1_4hdyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bagdj"]
-size = Vector2(124, 125)
+size = Vector2(16, 16)
 
 [node name="Door" type="Area2D"]
 script = ExtResource("1_4hdyq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_bagdj")

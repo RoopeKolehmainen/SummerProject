@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://cfuuegn8ydfse"]
+[gd_scene load_steps=8 format=4 uid="uid://cfuuegn8ydfse"]
 
 [ext_resource type="TileSet" uid="uid://ds0yd6nton8ik" path="res://town.tres" id="1_dwdjc"]
 [ext_resource type="Texture2D" uid="uid://rfrgsg6d8wsd" path="res://Water.png" id="3_e8yg3"]
 [ext_resource type="PackedScene" uid="uid://xqb4yd3oarpp" path="res://Pelaaja4.tscn" id="3_gwqsq"]
+[ext_resource type="Texture2D" uid="uid://ctsyyydir43nu" path="res://Assetit/Assets/Buildings/house1.png" id="4_nki3b"]
+[ext_resource type="PackedScene" uid="uid://dlep0edrfgde1" path="res://Scenet/Portal.tscn" id="5_tkreh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e8yg3"]
 texture = ExtResource("3_e8yg3")
@@ -196,3 +198,12 @@ tile_set = SubResource("TileSet_nki3b")
 [node name="Player" parent="." instance=ExtResource("3_gwqsq")]
 speed = 6
 sprint_speed = 12
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-176, -96)
+texture = ExtResource("4_nki3b")
+centered = false
+
+[node name="Door_T" parent="." instance=ExtResource("5_tkreh")]
+position = Vector2(-160, -16)
+target_scene = "uid://vdk1rdqfmam0"

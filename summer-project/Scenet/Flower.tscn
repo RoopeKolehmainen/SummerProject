@@ -1,25 +1,25 @@
 [gd_scene load_steps=8 format=3 uid="uid://dj7afb43bhk1j"]
 
-[ext_resource type="Texture2D" uid="uid://5nelc467avt4" path="res://Assetit/Assets/Flowers/red_flower.png" id="1_woy30"]
+[ext_resource type="Texture2D" uid="uid://5nelc467avt4" path="res://Assetit/Assets/Flowers/red_flower.png" id="1_8vt7g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6iefh"]
-atlas = ExtResource("1_woy30")
+atlas = ExtResource("1_8vt7g")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_trkl5"]
-atlas = ExtResource("1_woy30")
+atlas = ExtResource("1_8vt7g")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yft2f"]
-atlas = ExtResource("1_woy30")
+atlas = ExtResource("1_8vt7g")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iqnbb"]
-atlas = ExtResource("1_woy30")
+atlas = ExtResource("1_8vt7g")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ymvt"]
-atlas = ExtResource("1_woy30")
+atlas = ExtResource("1_8vt7g")
 region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_47ysh"]

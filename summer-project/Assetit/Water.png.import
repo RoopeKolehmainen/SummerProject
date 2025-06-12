@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dul3vtj05d5p4"
-path="res://.godot/imported/jump_landing_dust.png-b70b1ae114ac9b3ab432127b2b4ccfcc.ctex"
+uid="uid://rfrgsg6d8wsd"
+path="res://.godot/imported/Water.png-570fd60cc0425ab5a3d71ccf4f790d76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assetit/jump_landing_dust.png"
-dest_files=["res://.godot/imported/jump_landing_dust.png-b70b1ae114ac9b3ab432127b2b4ccfcc.ctex"]
+source_file="res://Assetit/Water.png"
+dest_files=["res://.godot/imported/Water.png-570fd60cc0425ab5a3d71ccf4f790d76.ctex"]
 
 [params]
 

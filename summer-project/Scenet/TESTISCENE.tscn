@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dt8e18owvncvo" path="res://Scriptit/DoorCheck.gd" id="1_kqjk8"]
 [ext_resource type="PackedScene" uid="uid://dlep0edrfgde1" path="res://Scenet/Portal.tscn" id="3_07b12"]
-[ext_resource type="Texture2D" uid="uid://v2fjnjaqac2t" path="res://Assetit/icon2.png" id="3_kqjk8"]
-[ext_resource type="PackedScene" uid="uid://xqb4yd3oarpp" path="res://Pelaaja4.tscn" id="4_kqjk8"]
+[ext_resource type="Texture2D" path="res://Assetit/icon2.png" id="3_kqjk8"]
+[ext_resource type="PackedScene" uid="uid://xqb4yd3oarpp" path="res://Scenet/Pelaaja4.tscn" id="4_kqjk8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1t58a"]
 texture = ExtResource("3_kqjk8")

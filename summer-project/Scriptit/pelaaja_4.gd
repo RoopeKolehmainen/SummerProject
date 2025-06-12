@@ -28,7 +28,7 @@ func _ready():
 	initial_position = position
 	anim_tree.set("parameters/Idle/blend_position", Vector2.DOWN)
 
-func _process(delta):
+func _process(_delta):
 	movement_input2()
 	
 func _physics_process(delta):
@@ -59,7 +59,6 @@ func walk(delta):
 			position = initial_position + (TILE_SIZE*player_direction)
 			percent_to_next_tile = 0.0
 			is_moving = false
-
 		else:
 			position = initial_position + (TILE_SIZE * player_direction * percent_to_next_tile)
 	else:

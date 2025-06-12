@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dt8e18owvncvo" path="res://Scriptit/DoorCheck.gd" id="1_2kky8"]
 [ext_resource type="PackedScene" uid="uid://dlep0edrfgde1" path="res://Scenet/Portal.tscn" id="1_wrjpj"]
-[ext_resource type="Texture2D" uid="uid://v2fjnjaqac2t" path="res://Assetit/icon2.png" id="2_fvavt"]
-[ext_resource type="Texture2D" uid="uid://dcyc2h8pwnrh" path="res://Assetit/icon3.png" id="3_msp50"]
+[ext_resource type="Texture2D" path="res://Assetit/icon2.png" id="2_fvavt"]
+[ext_resource type="Texture2D" path="res://Assetit/icon3.png" id="3_msp50"]
 [ext_resource type="PackedScene" uid="uid://b04y8g6jsk7v3" path="res://Scenet/Player.tscn" id="4_msp50"]
-[ext_resource type="Texture2D" uid="uid://3imepx1o12hn" path="res://Assetit/grass1_tileset.png" id="6_h1q1l"]
+[ext_resource type="Texture2D" path="res://Assetit/grass1_tileset.png" id="6_h1q1l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_duv6i"]
 texture = ExtResource("6_h1q1l")

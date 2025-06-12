@@ -1,7 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://d0j5ywjifhjbq"]
+[gd_scene load_steps=43 format=3 uid="uid://bv2iqjlb6joew"]
 
-[ext_resource type="Script" uid="uid://tcjr4r05tsei" path="res://pelaaja_5.gd" id="1_fff7w"]
-[ext_resource type="Texture2D" uid="uid://b1kviairde8a1" path="res://Assetit/Male_Spritesheet.png" id="2_5a13w"]
+[ext_resource type="Script" uid="uid://bpmtqbyx5f35s" path="res://Scriptit/character_body_2d.gd" id="1_r2shv"]
+[ext_resource type="Texture2D" uid="uid://b1kviairde8a1" path="res://Assetit/Assets/Male_Spritesheet.png" id="2_nl8v2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y80ap"]
 size = Vector2(16, 16)
@@ -106,7 +106,7 @@ states/Run/position = Vector2(722.54, 183.8)
 states/Turn/node = SubResource("AnimationNodeBlendSpace2D_cp7eh")
 states/Turn/position = Vector2(721.48, 47.7875)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_ljbl8")
-states/Walk/position = Vector2(557.98, 100)
+states/Walk/position = Vector2(559.98, 100.394)
 graph_offset = Vector2(86.04, -35.7)
 
 [sub_resource type="Animation" id="Animation_n63hs"]
@@ -466,6 +466,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_0ekto"]
 resource_name = "walk_down"
 length = 0.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -576,11 +577,11 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_fff7w")
+script = ExtResource("1_r2shv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
-texture = ExtResource("2_5a13w")
+texture = ExtResource("2_nl8v2")
 centered = false
 flip_h = true
 hframes = 3
@@ -597,7 +598,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Run/blend_position = Vector2(0.00152755, -0.0112782)
 parameters/Turn/blend_position = Vector2(0, 0)
-parameters/Walk/blend_position = Vector2(0, -0.00302112)
+parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -607,5 +608,3 @@ libraries = {
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(8, 8)
 target_position = Vector2(0, 8)
-
-[node name="Camera2D" type="Camera2D" parent="."]

@@ -4,21 +4,6 @@
 [ext_resource type="Script" uid="uid://bxpk3hkkd2v2i" path="res://turn_based_player.gd" id="1_v4b7y"]
 [ext_resource type="Texture2D" uid="uid://wcb8rdusn2q5" path="res://Assetit/Assets/Grass/grass_step_animation.png" id="2_v4b7y"]
 
-[sub_resource type="Animation" id="Animation_t7fsb"]
-resource_name = "hurt"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../PlayerSprite:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.201486, 0.266667, 0.468153),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(30, 30, 30, 1), Color(1, 1, 1, 1), Color(30, 30, 30, 1), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_v4b7y"]
 length = 0.001
 tracks/0/type = "value"
@@ -32,6 +17,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(30, 30, 30, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t7fsb"]
+resource_name = "hurt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PlayerSprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.201486, 0.266667, 0.468153),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(30, 30, 30, 1), Color(1, 1, 1, 1), Color(30, 30, 30, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6asqy"]

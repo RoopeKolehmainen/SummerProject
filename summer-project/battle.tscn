@@ -5,21 +5,18 @@
 [ext_resource type="PackedScene" uid="uid://dm0tomj2qieiq" path="res://player_group.tscn" id="3_7sfm4"]
 
 [node name="Battle" type="Node2D"]
-position = Vector2(36, 40)
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -36.0
-offset_top = -40.0
-offset_right = 284.0
-offset_bottom = 140.0
+offset_right = 320.0
+offset_bottom = 180.0
 texture = ExtResource("2_oxp8w")
 expand_mode = 1
 
 [node name="Enemy Group" parent="." instance=ExtResource("1_ip7xm")]
-position = Vector2(28, 8)
+position = Vector2(32, 48)
 
 [node name="PlayerGroup" parent="." instance=ExtResource("3_7sfm4")]
-position = Vector2(220, 8)
+position = Vector2(256, 48)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

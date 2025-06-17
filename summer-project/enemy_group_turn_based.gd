@@ -6,7 +6,7 @@ func _ready():
 	enemies = get_children()
 	for i in enemies.size():
 		enemies[i].position = Vector2(0, i*32)
-	enemies[0].focus()
+	enemies[0].unfocus()
 func _process(delta):
 	if Input.is_action_just_pressed("up"):
 		if index > 0:

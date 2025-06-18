@@ -16,6 +16,7 @@ texture = SubResource("CompressedTexture2D_ydtnl")
 flip_h = false
 
 [node name="Focus" parent="TurnBasedPlayer" index="1"]
+visible = false
 position = Vector2(16, 0)
 
 [node name="TurnBasedPlayer2" parent="." instance=ExtResource("1_kcg7b")]
@@ -25,6 +26,7 @@ texture = SubResource("CompressedTexture2D_ydtnl")
 flip_h = false
 
 [node name="Focus" parent="TurnBasedPlayer2" index="1"]
+visible = false
 position = Vector2(16, 0)
 
 [node name="TurnBasedPlayer3" parent="." instance=ExtResource("1_kcg7b")]
@@ -34,6 +36,7 @@ texture = SubResource("CompressedTexture2D_ydtnl")
 flip_h = false
 
 [node name="Focus" parent="TurnBasedPlayer3" index="1"]
+visible = false
 position = Vector2(16, 0)
 
 [node name="TurnBasedPlayer4" parent="." instance=ExtResource("1_kcg7b")]
@@ -43,6 +46,7 @@ texture = SubResource("CompressedTexture2D_ydtnl")
 flip_h = false
 
 [node name="Focus" parent="TurnBasedPlayer4" index="1"]
+visible = false
 position = Vector2(16, 0)
 
 [editable path="TurnBasedPlayer"]

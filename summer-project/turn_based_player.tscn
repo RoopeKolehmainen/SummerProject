@@ -52,6 +52,7 @@ vframes = 3
 frame = 7
 
 [node name="Focus" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-14, -7)
 texture = ExtResource("2_v4b7y")
 hframes = 4

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export_category("Settings")
 var TILE_SIZE = 16
-@export var speed = 8
+@export var speed = 4
 @export var sprint_speed = 10
 
 enum State{WALK, RUN, IDLE}
@@ -44,7 +44,6 @@ func _physics_process(delta):
 			idle()
 	if is_moving == false:
 		process_player_input()
-	speed = 8
 	player_animations()
 	
 	

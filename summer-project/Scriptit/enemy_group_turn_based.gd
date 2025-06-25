@@ -59,3 +59,6 @@ func start_choosing():
 func _on_button_pressed() -> void:
 	choice.hide()
 	start_choosing()
+
+
+#Kommentti

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://de8cdecq7kj4w"]
+
+[ext_resource type="Texture2D" uid="uid://b7q5f0oy4pi3e" path="res://Assetit/ball.png" id="1_xl3td"]
+
+[node name="BatllePlayer" type="TextureButton"]
+offset_right = 16.0
+offset_bottom = 16.0
+texture_normal = ExtResource("1_xl3td")

@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://caneys0npjnxn"]
+
+[ext_resource type="FontFile" uid="uid://bkutbhgkh0aq5" path="res://Assetit/monogram.ttf" id="1_e7bfs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3taad"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7j863"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50bnw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cefca"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ed8xq"]
+
+[resource]
+default_font = ExtResource("1_e7bfs")
+Button/colors/font_color = Color(0.253906, 0.242004, 0.242004, 1)
+Button/colors/font_focus_color = Color(0.0432129, 0.921875, 0.0775356, 1)
+Button/colors/font_hover_pressed_color = Color(0.625, 0.612793, 0.612793, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_3taad")
+Button/styles/focus = SubResource("StyleBoxEmpty_7j863")
+Button/styles/hover = SubResource("StyleBoxEmpty_50bnw")
+Button/styles/normal = SubResource("StyleBoxEmpty_cefca")
+Button/styles/pressed = SubResource("StyleBoxEmpty_ed8xq")
+VBoxContainer/constants/separation = -2

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://50tmektfmy2d"]
+
+[ext_resource type="Script" uid="uid://k7t7qs48o4mq" path="res://harjoittelua.gd" id="1_sdn4j"]
+[ext_resource type="Script" uid="uid://bvskuwgap8g1n" path="res://harjoitteluskripti 3.gd" id="2_uteeo"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_sdn4j")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_uteeo")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="damage" from="." to="Node" method="_on_node_damage"]

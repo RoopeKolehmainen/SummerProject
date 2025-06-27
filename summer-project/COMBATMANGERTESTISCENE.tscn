@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfm7b4cbmdsgj"]
+
+[ext_resource type="Script" uid="uid://c7a5pehqxcf7y" path="res://Scriptit/enemymanager.gd" id="1_pfxg6"]
+[ext_resource type="PackedScene" uid="uid://cm34mjmi1qipj" path="res://TurnBasedVihollinen.tscn" id="2_csmbc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_pfxg6")
+
+[node name="Susi" parent="." instance=ExtResource("2_csmbc")]

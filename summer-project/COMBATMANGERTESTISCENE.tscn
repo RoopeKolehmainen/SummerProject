@@ -9,3 +9,4 @@
 script = ExtResource("1_pfxg6")
 
 [node name="Susi" parent="." instance=ExtResource("2_csmbc")]
+position = Vector2(32, 32)

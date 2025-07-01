@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccpg11qwvknmt"]
-
-[ext_resource type="Texture2D" uid="uid://b7q5f0oy4pi3e" path="res://Assetit/ball.png" id="1_u1kt3"]
-
-[node name="Battle_Enemy" type="TextureButton"]
-self_modulate = Color(0.820313, 0.0961304, 0.0961304, 1)
-offset_right = 16.0
-offset_bottom = 16.0
-texture_normal = ExtResource("1_u1kt3")

@@ -13,11 +13,11 @@ config_version=5
 config/name="Summer project"
 run/main_scene="uid://cfuuegn8ydfse"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://Assetit/icon.svg"
+config/icon="res://Assets/icon.svg"
 
 [autoload]
 
-Global="*res://Scriptit/Global.gd"
+Global="*res://Scriptit/Globaalit/Global.gd"
 
 [display]
 

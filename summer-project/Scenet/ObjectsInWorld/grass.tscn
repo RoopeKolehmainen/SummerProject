@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dy45gwtsjntap"]
 
-[ext_resource type="Script" uid="uid://k308ctdcjbi4" path="res://Scriptit/grass.gd" id="1_mw2ei"]
-[ext_resource type="Texture2D" uid="uid://c7lhb0j8l6o44" path="res://Assetit/Assets/Grass/tall_grass.png" id="2_2qnaq"]
+[ext_resource type="Script" uid="uid://k308ctdcjbi4" path="res://Scriptit/Objekti Scriptit/grass.gd" id="1_mw2ei"]
+[ext_resource type="Texture2D" uid="uid://c7lhb0j8l6o44" path="res://Assets/Grass/tall_grass.png" id="2_2qnaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmnf0"]
 size = Vector2(14, 14)

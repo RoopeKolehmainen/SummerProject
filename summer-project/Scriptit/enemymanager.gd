@@ -1,12 +1,15 @@
 extends Node
-class_name ID
+class_name enemymanager
 var enemyID:int 
 var enemydictionary = {}
+static var Instance : enemymanager
 
 
-
-func assign_enemy_ID(nodeName):
-	enemydictionary.get_or_add({nodeName : enemyID})
+func _ready():
+	Instance = self
+	
+func assign_enemy_ID(node : Node):
+	enemydictionary.get_or_add({node : enemyID})
 	enemyID += 1
 	print(enemydictionary)
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cfuuegn8ydfse"]
+[gd_scene load_steps=14 format=4 uid="uid://cfuuegn8ydfse"]
 
 [ext_resource type="TileSet" uid="uid://ds0yd6nton8ik" path="res://Tres filut/town.tres" id="1_rkkqb"]
 [ext_resource type="PackedScene" uid="uid://dy45gwtsjntap" path="res://Scenet/ObjectsInWorld/grass.tscn" id="2_xggc1"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://rfrgsg6d8wsd" path="res://Assetit/Water.png" id="4_juof6"]
 [ext_resource type="PackedScene" uid="uid://xqb4yd3oarpp" path="res://Scenet/PlayerScenetMaailmassa/Pelaaja4.tscn" id="5_j8ejg"]
 [ext_resource type="PackedScene" uid="uid://bv3hwdwc3kc0n" path="res://Scenet/ObjectsInWorld/tree.tscn" id="6_ss3xu"]
+[ext_resource type="PackedScene" uid="uid://cm34mjmi1qipj" path="res://TurnBasedVihollinen.tscn" id="7_ha8nk"]
+[ext_resource type="PackedScene" uid="uid://d1ugeiqoe48yr" path="res://MANAGERTESTISCENE.tscn" id="8_juof6"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_tkreh"]
 scenes/1/scene = ExtResource("2_xggc1")
@@ -2021,3 +2023,7 @@ position = Vector2(-208, -352)
 
 [node name="Tree600" parent="Everything/Ysort" instance=ExtResource("6_ss3xu")]
 position = Vector2(-240, -352)
+
+[node name="Susi" parent="." instance=ExtResource("7_ha8nk")]
+
+[node name="Manager" parent="." instance=ExtResource("8_juof6")]

@@ -1,6 +1,5 @@
 extends Node
-var manager : enemymanager
 
 func _ready() -> void:
-	await get_tree().process_frame 
+	await get_tree().process_frame
 	enemymanager.Instance.assign_enemy_ID(self)

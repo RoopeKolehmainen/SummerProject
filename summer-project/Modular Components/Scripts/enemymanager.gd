@@ -1,16 +1,14 @@
 extends Node
 class_name enemymanager
-var enemyID: int = 0
-var enemydictionary = {}
 static var Instance : enemymanager
+var enemydictionary : Array = []
 
 func _ready():
 	Instance = self
 
+
 func assign_enemy_ID(node : Node):
-	enemydictionary.get_or_add(enemyID , node)
-	enemyID += 1
+	enemydictionary.insert(enemydictionary.size(), node)
 
-
-func remove_enemy(enemyID):
-	enemydictionary.erase(enemyID)
+func remove_enemy(node : Node):
+	enemydictionary.erase(node)

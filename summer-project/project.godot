@@ -18,6 +18,7 @@ config/icon="res://Assets/icon.svg"
 [autoload]
 
 Global="*res://Scriptit/Globaalit/Global.gd"
+Gamemanager="*res://Scriptit/Globaalit/Gamemanager.gd"
 
 [display]
 

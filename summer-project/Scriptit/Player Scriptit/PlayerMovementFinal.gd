@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name player
 @export_category("Settings")
 var TILE_SIZE = 16
 @export var speed = 4

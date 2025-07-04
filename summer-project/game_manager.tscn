@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://6ltbgd03v42o"]
+
+[ext_resource type="Script" uid="uid://cx7ihmeb50jqx" path="res://Scriptit/Globaalit/Gamemanager.gd" id="1_70yv6"]
+[ext_resource type="PackedScene" uid="uid://cpk3qnww51o4l" path="res://Modular Components/Scenes/enemymanager.tscn" id="2_smx3j"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_70yv6")
+
+[node name="enemymanager" parent="." instance=ExtResource("2_smx3j")]

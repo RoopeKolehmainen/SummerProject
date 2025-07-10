@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cehqkbn0ykhgb"]
+
+[ext_resource type="PackedScene" uid="uid://cw7btq3ncp7me" path="res://turn_based_player.tscn" id="1_480ym"]
+[ext_resource type="PackedScene" uid="uid://jjk2i10lpoax" path="res://turn_based_enemy.tscn" id="1_nhlnc"]
+
+[node name="Turn_Based_Combat" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Turn Based Player" parent="." instance=ExtResource("1_480ym")]
+position = Vector2(288, 48)
+
+[node name="enemy_name" parent="." instance=ExtResource("1_nhlnc")]

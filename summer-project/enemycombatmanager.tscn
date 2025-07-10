@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://l0jbj482s2jp"]
+
+[ext_resource type="Script" uid="uid://bfc7w5mvvyfdc" path="res://Scriptit/Globaalit/Globaalit scenet/enemycombatmanager.gd" id="1_faodn"]
+
+[node name="enemycombatmanager" type="Node"]
+script = ExtResource("1_faodn")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://03r0erlu2sjn"]
+
+[ext_resource type="Script" uid="uid://yqala28x8xx7" path="res://Scriptit/Globaalit/Globaalit scenet/attackmanager.gd" id="1_b5pgc"]
+
+[node name="attackmanager" type="Node"]
+script = ExtResource("1_b5pgc")

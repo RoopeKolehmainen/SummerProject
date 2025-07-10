@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://crhvcld611cyl"]
+
+[ext_resource type="Script" uid="uid://cocrhu3ulouhr" path="res://Modular Components/Scripts/character.gd" id="1_4r0wc"]
+[ext_resource type="PackedScene" uid="uid://dvd8q2l8qrk4s" path="res://Modular Components/Character Stats/characterstats.tscn" id="2_32y6n"]
+
+[node name="Node" type="Node" node_paths=PackedStringArray("node")]
+script = ExtResource("1_4r0wc")
+node = NodePath("Characterstats")
+is_player = true
+
+[node name="Characterstats" parent="." instance=ExtResource("2_32y6n")]
+health = 100
+damage = 5

@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://6ltbgd03v42o"]
+[gd_scene load_steps=6 format=3 uid="uid://6ltbgd03v42o"]
 
 [ext_resource type="Script" uid="uid://cx7ihmeb50jqx" path="res://Scriptit/Globaalit/Gamemanager.gd" id="1_kom1a"]
 [ext_resource type="PackedScene" uid="uid://cpk3qnww51o4l" path="res://Modular Components/Scenes/enemymanager.tscn" id="2_chhep"]
+[ext_resource type="PackedScene" uid="uid://bshfa5fadkch1" path="res://turnmanager.tscn" id="3_aob1y"]
+[ext_resource type="PackedScene" uid="uid://03r0erlu2sjn" path="res://attackmanager.tscn" id="4_aob1y"]
+[ext_resource type="PackedScene" uid="uid://l0jbj482s2jp" path="res://enemycombatmanager.tscn" id="5_jfepu"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_kom1a")
 
 [node name="enemymanager" parent="." instance=ExtResource("2_chhep")]
+
+[node name="turnmanager" parent="." instance=ExtResource("3_aob1y")]
+
+[node name="attackmanager" parent="." instance=ExtResource("4_aob1y")]
+
+[node name="enemycombatmanager" parent="." instance=ExtResource("5_jfepu")]

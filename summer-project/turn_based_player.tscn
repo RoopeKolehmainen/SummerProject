@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw7btq3ncp7me"]
+
+[ext_resource type="Script" uid="uid://bpse48l4be5f0" path="res://turn_based_player.gd" id="1_0v40r"]
+[ext_resource type="Texture2D" uid="uid://b7q5f0oy4pi3e" path="res://Assets/ball.png" id="1_t7fsb"]
+
+[node name="Turn Based Player" type="Sprite2D"]
+texture = ExtResource("1_t7fsb")
+script = ExtResource("1_0v40r")

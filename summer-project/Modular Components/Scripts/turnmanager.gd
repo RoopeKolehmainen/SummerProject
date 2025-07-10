@@ -12,6 +12,7 @@ func update_turn():
 		return
 	if is_player_turn == true:
 		is_player_turn = false
+		enemycombatmanager.Instance.start_combat()
 
 func get_player_state() -> bool:
 	return is_player_turn

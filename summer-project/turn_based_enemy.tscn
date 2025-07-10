@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://jjk2i10lpoax"]
+
+[ext_resource type="Texture2D" uid="uid://b7q5f0oy4pi3e" path="res://Assets/ball.png" id="1_65nk1"]
+[ext_resource type="Script" uid="uid://dhy5w0njiq5kp" path="res://Modular Components/Scripts/IDassigner.gd" id="1_jqamn"]
+[ext_resource type="Script" uid="uid://cgg4yudhrerou" path="res://combat_button.gd" id="3_cqvtc"]
+[ext_resource type="Script" uid="uid://cocrhu3ulouhr" path="res://Modular Components/Scripts/character.gd" id="4_5i7od"]
+[ext_resource type="PackedScene" uid="uid://t2acsey5dsgq" path="res://Modular Components/Character Stats/susistats.tscn" id="5_lgtui"]
+
+[node name="enemy_name" type="Node"]
+script = ExtResource("1_jqamn")
+
+[node name="Turn_based_enemy" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("1_65nk1")
+script = ExtResource("3_cqvtc")
+
+[node name="Node2" type="Node" parent="." node_paths=PackedStringArray("node")]
+script = ExtResource("4_5i7od")
+node = NodePath("Node")
+
+[node name="Node" parent="Node2" instance=ExtResource("5_lgtui")]
+health = 100
+
+[connection signal="pressed" from="Turn_based_enemy" to="Turn_based_enemy" method="_on_pressed"]

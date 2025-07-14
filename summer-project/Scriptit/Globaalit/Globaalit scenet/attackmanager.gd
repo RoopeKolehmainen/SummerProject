@@ -8,5 +8,4 @@ func _ready():
 func useattack(target : Node):
 	turnmanager.Instance.update_turn()
 	#TODO attacking logic
-	var joku  = target.get_script()
-	joku.takedamage(5)
+	target.takedamage(5)

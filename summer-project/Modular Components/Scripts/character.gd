@@ -13,10 +13,11 @@ func gamestart():
 	damage = node.returndamage()
 
 func takedamage(damage : int):
+	print()
 	health -= damage
 	print(health)
 	if health < 1:
+		get_tree().root.queue_free()
 		if is_player == true:
 			pass
 			#TODO gameover systeemi
-	queue_free()

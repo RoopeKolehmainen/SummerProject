@@ -1,6 +1,7 @@
 extends Node
 @export var health: int
 
+
 func take_damage(damage : int):
 	health -= damage
 	#update UI

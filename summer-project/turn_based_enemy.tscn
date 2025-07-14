@@ -15,11 +15,10 @@ offset_bottom = 8.0
 icon = ExtResource("1_65nk1")
 script = ExtResource("3_cqvtc")
 
-[node name="Node2" type="Node" parent="." node_paths=PackedStringArray("node")]
+[node name="Enemy" type="Node" parent="Turn_based_enemy"]
 script = ExtResource("4_5i7od")
-node = NodePath("Node")
 
-[node name="Node" parent="Node2" instance=ExtResource("5_lgtui")]
+[node name="Node" parent="Turn_based_enemy" instance=ExtResource("5_lgtui")]
 health = 100
 
 [connection signal="pressed" from="Turn_based_enemy" to="Turn_based_enemy" method="_on_pressed"]
